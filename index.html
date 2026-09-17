@@ -8,25 +8,117 @@
     
     <title>introducción HTML5 en minutos: la base que la IA no puede reemplazar - MiTube</title>
 
-    <!-- Parte 2 Paso 3: Única forma de integración requerida (Hoja externa styles.css) -->
-    <link rel="stylesheet" href="styles.css">
+    <style>
+        /* ==========================================================================
+           LABORATORIO #5: Estilizando la página de video con CSS3
+           ========================================================================== */
+
+        /* PARTE 3 — SELECTOR UNIVERSAL (Reset general) */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        /* PARTE 1 & 3 — COLOR DE FONDO (VERDE AGUA) Y TIPOGRAFÍA BASE */
+        body {
+            background-color: #7fffd4; /* Verde agua (Aquamarine) */
+            font-family: Arial, sans-serif;
+            color: #212121;
+            line-height: 1.5;
+        }
+
+        /* PARTE 4 — SELECTORES DE CLASE (.clase) */
+        .navbar {
+            display: flex;
+            gap: 16px;
+            list-style: none;
+        }
+
+        .nav-link {
+            color: #1b2a4a;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        .btn {
+            background-color: #e8791a;
+            color: #ffffff;
+            border: none;
+            padding: 8px 16px;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        .card {
+            margin-bottom: 12px;
+            padding: 8px;
+            border: 1px solid #00a896;
+            background-color: #ffffff;
+            border-radius: 4px;
+        }
+
+        /* PARTE 5 — SELECTORES DE ID (#id) */
+        #video-player {
+            max-width: 720px;
+            margin: 24px auto;
+            padding: 0 12px;
+        }
+
+        #sugeridos {
+            width: 300px;
+            background-color: #a8f0d8;
+            padding: 12px;
+            border-radius: 4px;
+            margin: 24px auto;
+        }
+
+        #pie {
+            background-color: #1b2a4a;
+            color: #ffffff;
+            padding: 16px;
+            text-align: center;
+            margin-top: 32px;
+        }
+
+        /* PARTE 6 — SELECTOR DE AGRUPACIÓN Y AJUSTES FINALES */
+        h1, h2, h3 {
+            font-family: Arial, sans-serif;
+            color: #1b2a4a;
+            margin-bottom: 8px;
+        }
+
+        input[type="search"]:focus, 
+        textarea:focus {
+            outline: 2px solid #e8791a;
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+            display: block;
+        }
+    </style>
 </head>
 <body>
 
     <!-- Encabezado y Navegación -->
-    <header>
+    <header style="background-color: #ffffff; padding: 12px; border-bottom: 2px solid #00a896;">
         <a href="#">
             <img src="https://picsum.photos/id/10/120/40" alt="Logo de MiTube" width="120">
         </a>
 
+        <br>
+
         <form action="#" role="search">
-            <input type="search" name="q" placeholder="Buscar" required>
+            <input type="search" name="q" placeholder="Buscar..." style="padding: 6px;" required>
             <button type="submit" class="btn">Buscar</button>
         </form>
 
-        <!-- Parte 4 Paso 1: Clase navbar en nav -->
+        <br>
+
         <nav class="navbar">
-            <ul>
+            <ul class="navbar">
                 <li><a href="#" class="nav-link">Inicio</a></li>
                 <li><a href="#" class="nav-link">Suscripciones</a></li>
                 <li><a href="#" class="nav-link">Mi biblioteca</a></li>
@@ -36,7 +128,7 @@
 
     <!-- Contenido Principal -->
     <main>
-        <!-- Parte 5 Paso 1: ID video-player -->
+        <!-- Sección del Reproductor de Video -->
         <section id="video-player">
             <iframe 
                 width="100%" 
@@ -48,106 +140,81 @@
                 allowfullscreen>
             </iframe>
 
-            <h1>introducción HTML5 en minutos: la base que la IA no puede reemplazar</h1>
+            <h1 style="margin-top: 12px;">introducción HTML5 en minutos: la base que la IA no puede reemplazar</h1>
 
             <p>
                 <span>1,801 vistas</span> • 
                 <time datetime="2026-02-05">5 de febrero de 2026</time>
             </p>
 
-            <div>
-                <img src="https://picsum.photos/id/64/48/48" alt="Avatar del canal yacklyon" width="48">
+            <br>
+
+            <div style="display: flex; align-items: center; gap: 12px;">
+                <img src="https://picsum.photos/id/64/48/48" alt="Avatar del canal yacklyon" width="48" style="border-radius: 50%;">
                 <span><strong>yacklyon</strong></span>
                 <button type="button" class="btn">Suscribirse</button>
             </div>
+
+            <br>
 
             <p>
                 En este video aprenderás qué es HTML5 (HyperText Markup Language), cómo opera el marcado de hipertexto, la estructura inicial de un documento web con doctype y head, e instalación de herramientas como Visual Studio Code.
             </p>
         </section>
 
+        <br>
+
         <!-- Sección de Comentarios -->
-        <section id="comentarios">
+        <section id="comentarios" style="max-width: 720px; margin: 0 auto; padding: 0 12px;">
             <h2>Comentarios</h2>
 
             <form action="#">
                 <label for="comentario">Agrega un comentario público:</label><br>
-                <textarea id="comentario" name="comentario" rows="3" placeholder="Agrega un comentario público..." required></textarea><br>
+                <textarea id="comentario" name="comentario" rows="3" style="width: 100%; padding: 8px;" placeholder="Agrega un comentario público..." required></textarea><br><br>
                 <button type="submit" class="btn">Comentar</button>
             </form>
 
             <br>
 
             <article class="card">
-                <img src="https://picsum.photos/id/1005/32/32" alt="Avatar de Juan Pérez" width="32">
-                <span><strong>Juan Pérez</strong></span>
-                <time datetime="2026-08-20">Hace 3 semanas</time>
+                <strong>Juan Pérez</strong> — <time datetime="2026-08-20">Hace 3 semanas</time>
                 <p>¡Excelente explicación! Me sirvió bastante para entender el origen de las etiquetas semánticas.</p>
             </article>
 
             <article class="card">
-                <img src="https://picsum.photos/id/1027/32/32" alt="Avatar de María Rodríguez" width="32">
-                <span><strong>María Rodríguez</strong></span>
-                <time datetime="2026-08-25">Hace 2 semanas</time>
+                <strong>María Rodríguez</strong> — <time datetime="2026-08-25">Hace 2 semanas</time>
                 <p>La base fundamental que todo desarrollador debe dominar antes de pasar a frameworks.</p>
             </article>
 
             <article class="card">
-                <img src="https://picsum.photos/id/1012/32/32" alt="Avatar de Carlos Gómez" width="32">
-                <span><strong>Carlos Gómez</strong></span>
-                <time datetime="2026-09-01">Hace 1 semana</time>
+                <strong>Carlos Gómez</strong> — <time datetime="2026-09-01">Hace 1 semana</time>
                 <p>Gracias por el aporte, excelente contenido para el curso de desarrollo web.</p>
             </article>
         </section>
     </main>
 
-    <!-- Parte 5 Paso 3: ID sugeridos -->
+    <!-- Panel de Videos Sugeridos -->
     <aside id="sugeridos">
         <h2>Videos sugeridos</h2>
 
         <article class="card">
-            <a href="#">
-                <img src="https://picsum.photos/id/1/168/94" alt="Miniatura de Curso de CSS Grid" width="168">
-            </a>
             <h3><a href="#" class="nav-link">Curso completo de CSS Grid y Flexbox</a></h3>
             <p>Diseño Web Avanzado</p>
         </article>
 
         <article class="card">
-            <a href="#">
-                <img src="https://picsum.photos/id/160/168/94" alt="Miniatura de Curso de JavaScript" width="168">
-            </a>
             <h3><a href="#" class="nav-link">Introducción a JavaScript ES6+</a></h3>
             <p>Código Facilito</p>
         </article>
 
         <article class="card">
-            <a href="#">
-                <img src="https://picsum.photos/id/180/168/94" alt="Miniatura de Guía de Git" width="168">
-            </a>
             <h3><a href="#" class="nav-link">Guía práctica de Git y GitHub para principiantes</a></h3>
             <p>DevLab UTP</p>
         </article>
-
-        <article class="card">
-            <a href="#">
-                <img src="https://picsum.photos/id/201/168/94" alt="Miniatura de Accesibilidad Web" width="168">
-            </a>
-            <h3><a href="#" class="nav-link">Principios de Accesibilidad Web WCAG</a></h3>
-            <p>Estándares W3C</p>
-        </article>
     </aside>
 
-    <!-- Parte 5 Paso 4: ID pie -->
+    <!-- Pie de Página -->
     <footer id="pie">
-        <ul class="navbar" style="justify-content: center; margin-bottom: 8px;">
-            <li><a href="#" class="nav-link" style="color: #ffffff;">Acerca de</a></li>
-            <li><a href="#" class="nav-link" style="color: #ffffff;">Prensa</a></li>
-            <li><a href="#" class="nav-link" style="color: #ffffff;">Copyright</a></li>
-            <li><a href="#" class="nav-link" style="color: #ffffff;">Términos</a></li>
-            <li><a href="#" class="nav-link" style="color: #ffffff;">Privacidad</a></li>
-        </ul>
-
         <p>&copy; 2026 MiTube — Universidad Tecnológica de Panamá</p>
     </footer>
 
