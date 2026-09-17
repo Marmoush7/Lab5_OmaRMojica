@@ -1,0 +1,113 @@
+/* ==========================================================================
+   LABORATORIO #5: Estilizando la página de video con CSS3
+   ========================================================================== */
+
+/* --------------------------------------------------------------------------
+   PARTE 1 — SINTAXIS Y COMENTARIOS
+   PARTE 3 — SELECTOR UNIVERSAL (Reset general) Y BASE
+   -------------------------------------------------------------------------- */
+
+/* Paso 1: Reset general */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Paso 2: Fondo general VERDE AGUA (#7fffd4) y tipografía base */
+body {
+    background-color: #7fffd4;
+    font-family: Arial, sans-serif;
+    color: #212121;
+    line-height: 1.5;
+}
+
+/* --------------------------------------------------------------------------
+   PARTE 4 — SELECTORES DE CLASE (.clase)
+   -------------------------------------------------------------------------- */
+
+/* Paso 2: Alineación de enlaces de navegación en fila */
+.navbar {
+    display: flex;
+    gap: 16px;
+    list-style: none;
+}
+
+/* Paso 3: Estilos de enlaces */
+.nav-link {
+    color: #1b2a4a;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+/* Paso 4: Estilos de botones */
+.btn {
+    background-color: #e8791a;
+    color: #ffffff;
+    border: none;
+    padding: 8px 16px;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+/* Paso 5: Tarjetas para comentarios y sugeridos */
+.card {
+    margin-bottom: 12px;
+    padding: 8px;
+    border: 1px solid #00a896;
+    background-color: #ffffff;
+    border-radius: 4px;
+}
+
+/* --------------------------------------------------------------------------
+   PARTE 5 — SELECTORES DE ID (#id)
+   -------------------------------------------------------------------------- */
+
+/* Paso 2: Centrar el reproductor con ancho máximo */
+#video-player {
+    max-width: 720px;
+    margin: 24px auto;
+    padding: 0 12px;
+}
+
+/* Paso 3: Panel de videos sugeridos con ancho fijo y fondo propio */
+#sugeridos {
+    width: 300px;
+    background-color: #a8f0d8;
+    padding: 12px;
+    border-radius: 4px;
+    margin: 24px auto;
+}
+
+/* Paso 4: Pie de página con fondo oscuro y texto claro */
+#pie {
+    background-color: #1b2a4a;
+    color: #ffffff;
+    padding: 16px;
+    text-align: center;
+    margin-top: 32px;
+}
+
+/* --------------------------------------------------------------------------
+   PARTE 6 — SELECTOR DE AGRUPACIÓN Y AJUSTES FINALES
+   -------------------------------------------------------------------------- */
+
+/* Paso 1: Agrupación de títulos h1, h2 y h3 */
+h1, h2, h3 {
+    font-family: Arial, sans-serif;
+    color: #1b2a4a;
+    margin-bottom: 8px;
+}
+
+/* Paso 2: Agrupación de estados de foco (:focus) */
+input[type="search"]:focus, 
+textarea:focus {
+    outline: 2px solid #e8791a;
+}
+
+/* Paso 3: Ajuste de imágenes para evitar desbordes */
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
